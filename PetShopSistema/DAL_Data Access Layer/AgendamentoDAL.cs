@@ -73,5 +73,40 @@ namespace PetShopSystem.DAL
             }
             return dt;
         }
+
+        // --- NOVOS MÉTODOS: ATUALIZAR E EXCLUIR ---
+
+        public void Atualizar(Agendamento agendamento)
+        {
+            string sql = @"UPDATE Agendamento 
+                           SET dt_agendamento = @data, cd_pet = @idPet, cd_servico = @idServico 
+                           WHERE cd_agendamento = @idAgendamento";
+
+            using (SqlConnection con = conexao.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@idAgendamento", agendamento.IdAgendamento);
+                cmd.Parameters.AddWithValue("@data", agendamento.DataAgendamento);
+                cmd.Parameters.AddWithValue("@idPet", agendamento.IdPet);
+                cmd.Parameters.AddWithValue("@idServico", agendamento.IdServico);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void Excluir(int idAgendamento)
+        {
+            string sql = "DELETE FROM Agendamento WHERE cd_agendamento = @idAgendamento";
+
+            using (SqlConnection con = conexao.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@idAgendamento", idAgendamento);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

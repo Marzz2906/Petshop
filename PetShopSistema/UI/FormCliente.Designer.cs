@@ -39,6 +39,8 @@
             this.btnAgendar = new System.Windows.Forms.Button();
             this.dgvAgendamentos = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgendamentos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,7 +124,7 @@
             // btnAgendar
             // 
             this.btnAgendar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgendar.Location = new System.Drawing.Point(425, 274);
+            this.btnAgendar.Location = new System.Drawing.Point(267, 285);
             this.btnAgendar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgendar.Name = "btnAgendar";
             this.btnAgendar.Size = new System.Drawing.Size(200, 62);
@@ -140,7 +142,7 @@
             this.dgvAgendamentos.RowTemplate.Height = 24;
             this.dgvAgendamentos.Size = new System.Drawing.Size(240, 150);
             this.dgvAgendamentos.TabIndex = 34;
-            this.dgvAgendamentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAgendamentos_CellContentClick);
+            this.dgvAgendamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAgendamentos_CellClick);
             // 
             // button4
             // 
@@ -159,11 +161,37 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(473, 285);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(142, 62);
+            this.btnEditar.TabIndex = 37;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.Location = new System.Drawing.Point(621, 285);
+            this.btnRemover.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(142, 62);
+            this.btnRemover.TabIndex = 38;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRemover);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.dgvAgendamentos);
             this.Controls.Add(this.btnAgendar);
@@ -198,5 +226,7 @@
         private System.Windows.Forms.Button btnAgendar;
         private System.Windows.Forms.DataGridView dgvAgendamentos;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnRemover;
     }
 }
